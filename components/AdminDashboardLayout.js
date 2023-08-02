@@ -5,9 +5,9 @@ function AdminDashboardLayout({ children }) {
         <div className="bg-blue-900 text-blue-100 w-1/5 fixed h-full">
           <h3 className="text-2xl p-4 border-b border-blue-800">Admin Menu</h3>
           <ul className="text-sm space-y-4 p-4">
-            <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#users">Users</a></li>
-            <li><a href="#settings">Settings</a></li>
+            <li><a href="/admin/dashboard">Dashboard</a></li>
+            <li><a href="/admin/users">Users</a></li>
+            <li><a href="/admin/settings">Settings</a></li>
           </ul>
         </div>
   
