@@ -2,12 +2,33 @@ function AdminDashboardLayout({ children }) {
     return (
       <div className="flex h-screen bg-gray-200">
         {/* Sidebar */}
-        <div className="bg-blue-900 text-blue-100 w-1/5 fixed h-full">
+        <div className="bg-blue-900 text-blue-100 w-1/5 fixed h-full overflow-hidden">
           <h3 className="text-2xl p-4 border-b border-blue-800">Admin Menu</h3>
           <ul className="text-sm space-y-4 p-4">
-            <li><a href="/admin/dashboard">Dashboard</a></li>
-            <li><a href="/admin/users">Users</a></li>
-            <li><a href="/admin/settings">Settings</a></li>
+            <li>
+              <a
+                href="/admin/dashboard"
+                className="p-2 rounded block text-white hover:text-blue-300 transition duration-300 ease-in-out bg-opacity-20 bg-white hover:bg-opacity-40 shadow-lg"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a
+                href="/admin/users"
+                className="p-2 rounded block text-white hover:text-blue-300 transition duration-300 ease-in-out bg-opacity-20 bg-white hover:bg-opacity-40 shadow-lg"
+              >
+                Users
+              </a>
+            </li>
+            <li>
+              <a
+                href="/admin/settings"
+                className="p-2 rounded block text-white hover:text-blue-300 transition duration-300 ease-in-out bg-opacity-20 bg-white hover:bg-opacity-40 shadow-lg"
+              >
+                Settings
+              </a>
+            </li>
           </ul>
         </div>
   
