@@ -17,7 +17,7 @@ function AdminDashboardLayout({ children }) {
           <header className="flex justify-between items-center p-4 border-b">
             <h2 className="text-2xl">Dashboard</h2>
             <nav>
-              <a href="#profile" className="text-blue-700">Profile</a>
+              <a href="/admin/profile" className="text-blue-700">Profile</a>
               <a href="#logout" className="ml-4 text-blue-700">Logout</a>
             </nav>
           </header>
