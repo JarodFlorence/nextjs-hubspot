@@ -5,9 +5,9 @@ function AdminDashboardLayout({ children }) {
         <div className="bg-blue-900 text-blue-100 w-1/5 fixed h-full">
           <h3 className="text-2xl p-4 border-b border-blue-800">Admin Menu</h3>
           <ul className="text-sm space-y-4 p-4">
-            <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#users">Users</a></li>
-            <li><a href="#settings">Settings</a></li>
+            <li><a href="/admin/dashboard">Dashboard</a></li>
+            <li><a href="/admin/users">Users</a></li>
+            <li><a href="/admin/settings">Settings</a></li>
           </ul>
         </div>
   
@@ -17,7 +17,7 @@ function AdminDashboardLayout({ children }) {
           <header className="flex justify-between items-center p-4 border-b">
             <h2 className="text-2xl">Dashboard</h2>
             <nav>
-              <a href="#profile" className="text-blue-700">Profile</a>
+              <a href="/admin/profile" className="text-blue-700">Profile</a>
               <a href="#logout" className="ml-4 text-blue-700">Logout</a>
             </nav>
           </header>
