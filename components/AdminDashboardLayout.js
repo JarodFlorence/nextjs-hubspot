@@ -16,6 +16,11 @@ function AdminDashboardLayout({ children }) {
             </a>
           </li>
           <li>
+            <a href="/admin/contacts" className="flex items-center p-2 hover:bg-blue-800 rounded">
+              <i className="fas fa-address-book mr-2"></i> Contacts
+            </a>
+          </li>
+          <li>
             <a href="/admin/settings" className="flex items-center p-2 hover:bg-blue-800 rounded">
               <i className="fas fa-cogs mr-2"></i> Settings
             </a>
