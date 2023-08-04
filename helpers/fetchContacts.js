@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-export const fetchContacts = async (page = 0, limit = 10) => {
-  const offset = page * limit;
+export const fetchContacts = async () => {
   const url = `https://api.hubapi.com/crm/v3/objects/contacts`;
 
   try {
