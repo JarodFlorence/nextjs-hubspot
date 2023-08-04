@@ -3,28 +3,7 @@ import { fetchContacts } from '../../helpers/fetchContacts';
 import AdminDashboardLayout from '../../components/AdminDashboardLayout';
 
 const ContactsPage = ({ initialContacts }) => {
-    const [page, setPage] = useState(0);
-    const [contacts, setContacts] = useState(initialContacts);
-  
-    const handleNextPage = async () => {
-      setPage((prevPage) => prevPage + 1);
-      try {
-        const newContacts = await fetchContacts(page + 1);
-        setContacts(newContacts);
-      } catch (error) {
-        console.error('Error fetching next page of contacts:', error);
-      }
-    };
-  
-    const handlePreviousPage = async () => {
-      setPage((prevPage) => Math.max(prevPage - 1, 0));
-      try {
-        const newContacts = await fetchContacts(page - 1);
-        setContacts(newContacts);
-      } catch (error) {
-        console.error('Error fetching previous page of contacts:', error);
-      }
-    };
+  const [contacts, setContacts] = useState(initialContacts);
 
   return (
     <AdminDashboardLayout>
@@ -37,7 +16,6 @@ const ContactsPage = ({ initialContacts }) => {
           </tr>
         </thead>
         <tbody>
-            {console.log(contacts)}
           {contacts.results?.map((contact) => (
             <tr key={contact.id}>
               <td className="py-2 px-4 border-b">{contact.properties.firstname} {contact.properties.lastname}</td>
