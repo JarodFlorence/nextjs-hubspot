@@ -6,7 +6,8 @@ import { Document, Page } from 'react-pdf';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const FileManagement = () => {
-  const { data, error } = useSWR('/api/files', fetcher);
+  const [currentPage, setCurrentPage] = useState(1);
+  const { data, error } = useSWR(`/api/files?page=${currentPage}`, fetcher);
 
   const deleteFile = async (filename) => {
     try {
@@ -56,6 +57,24 @@ const FileManagement = () => {
           </li>
         ))}
       </ul>
+      {/* Pagination Controls */}
+      <div className="mt-6 flex justify-center">
+        <button
+          onClick={() => setCurrentPage((page) => Math.max(page - 1, 1))}
+          className="mx-2 px-4 py-2 border rounded-lg bg-gray-200 hover:bg-gray-300"
+          disabled={currentPage === 1}
+        >
+          Prev
+        </button>
+        <span className="mx-2">{`${currentPage} / ${data.totalPages}`}</span>
+        <button
+          onClick={() => setCurrentPage((page) => Math.min(page + 1, data.totalPages))}
+          className="mx-2 px-4 py-2 border rounded-lg bg-gray-200 hover:bg-gray-300"
+          disabled={currentPage === data.totalPages}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
